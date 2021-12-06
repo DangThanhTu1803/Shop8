@@ -1,0 +1,298 @@
+﻿
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var listNewProducts = (List<Model.EF.Product>)ViewBag.NewProducts;
+    var listFeatureProducts = (List<Model.EF.Product>)ViewBag.FeatureProducts;
+}
+
+<div class="small-container">
+    <div class="categories">
+        <div class="row">
+            <div class="col-3">
+                <img src="~/Assets/client/Images/category-one.png">
+            </div>
+            <div class="col-3">
+                <img src="~/Assets/client/Images/category-2.jpg">
+            </div>
+            <div class="col-3">
+                <img src="~/Assets/client/Images/category4.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="small-container">
+    <h2 class="title">Feature Products</h2>
+    <div class="row">
+        @foreach (var item in listFeatureProducts)
+        {
+            var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+            <div class="col-4">
+                <img src="@item.Image" alt="@item.Name">
+                <h4>@item.Name</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+        }
+        @*<div class="col-4">
+            <img src="~/Assets/client/Images/product-one.png">
+            <h4>Red Polo Collar T-shirt</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-2.jpg">
+            <h4>Black HRX Track Sneakers</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-3.jpg">
+            <h4>Grey Sweatpants</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-four.png">
+            <h4>Blue NBA Trainers</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+        </div>*@
+    </div>
+</div>
+<div class="small-container">
+    <h2 class="title">New Products</h2>
+    <div class="row">
+        @foreach (var item in listNewProducts)
+        {
+            var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
+            <div class="col-4">
+                <a href="@url"><img src="@item.Image" alt="@item.Name"></a>
+                
+                <h4>@item.Name</h4>
+                <h5>@item.Price</h5>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+            </div>
+        }
+        @*<div class="col-4">
+            <img src="~/Assets/client/Images/product-5.jpg">
+            <h4>Silver Hightops Sneakers</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-6.jpg">
+            <h4>Black Stylish T-shirt</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-7.jpg">
+            <h4>HRX Cotton Socks</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-8.jpg">
+            <h4>Fossil Time Piece</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-9.jpg">
+            <h4>Simple Watch</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-10.jpg">
+            <h4>Black & Red Sneakers</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-11.jpg">
+            <h4>Grey Fidelity Shoe</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+        </div>
+        <div class="col-4">
+            <img src="~/Assets/client/Images/product-12.jpg">
+            <h4>Black Sweatpants</h4>
+            <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-o"></i>
+            </div>
+        </div>*@
+    </div>
+</div>
+<div class="offer">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2">
+                <img src="~/Assets/client/Images/exclusive Product.png" class="offer-img" />
+            </div>
+
+            <div class="col-2">
+                <p>Only Available in This Store</p>
+                <h1>Xiaomi Mi Smart Band 4</h1>
+                <small>
+                    AMOLED color touch screen with better brightness and 40% more viewable screen.
+                    View your calls, messages and notifications
+                    Track physical activity (including  swimming).
+                    Water resistant up to 50 m.
+                    Improvement in the measurement of  metrics.
+                </small>
+                <div class="button">
+                    <!-- Cách 1 -->
+                    <a href="javascript:buyNow()" class="btn">Buy now &#10132;</a>
+                    <!-- Cách 2 -->
+                    <!--<a href="#" onclick="buyNow(); return false;" class="btn">Buy now &#10132;</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="testimonial">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipsicing elit. Corrupti consequuntur eveniet
+                    beatae aperiam atque? Voluptate quae nihil numquam expedita nisi.
+                </p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <img src="~/Assets/client/Images/user-1.png">
+                <h3>Lucy Bemana</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipsicing elit. Corrupti consequuntur eveniet
+                    beatae aperiam atque? Voluptate quae nihil numquam expedita nisi.
+                </p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <img src="~/Assets/client/Images/user-2.png">
+                <h3>Brian Stacy</h3>
+            </div>
+            <div class="col-3">
+                <i class="fa fa-quote-left"></i>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipsicing elit. Corrupti consequuntur eveniet
+                    beatae aperiam atque? Voluptate quae nihil numquam expedita nisi.
+                </p>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                </div>
+                <img src="~/Assets/client/Images/user-3.png">
+                <h3>Betty Jane</h3>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="~/Assets/client/Images/logo-godrej.png">
+            </div>
+            <div class="col-5">
+                <img src="~/Assets/client/Images/logo-oppo.png">
+            </div>
+            <div class="col-5">
+                <img src="~/Assets/client/Images/logo-coca-cola.png">
+            </div>
+            <div class="col-5">
+                <img src="~/Assets/client/Images/logo-paypal.png">
+            </div>
+            <div class="col-5">
+                <img src="~/Assets/client/Images/logo-philips.png">
+            </div>
+        </div>
+    </div>
+</div>
+
