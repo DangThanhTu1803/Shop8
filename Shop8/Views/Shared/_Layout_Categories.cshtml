@@ -38,16 +38,32 @@
 
                                     <!-- My Account -->
 
-                                    <li class="account">
-                                        <a href="#">
-                                            My Account
-                                            <i class="fa fa-angle-down"></i>
-                                        </a>
-                                        <ul class="account_selection">
-                                            <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                            <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                                        </ul>
-                                    </li>
+                                    @if (Session[Shop8.Common.CommonConstants.USER_SESSION] == null)
+                                    {
+                                        <li class="account">
+                                            <a href="#">
+                                                Bạn chưa đăng nhập
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="account_selection">
+                                                <li><a href="/Dang-nhap"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+                                                <li><a href="/Dang-ky"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                            </ul>
+                                        </li>
+                                    }
+                                    else
+                                    {
+                                        <li class="account">
+                                            <a href="#">
+                                                My account
+                                                <i class="fa fa-angle-down"></i>
+                                            </a>
+                                            <ul class="account_selection">
+                                                <li><i class="fa fa-sign-out" aria-hidden="true">@Html.ActionLink("Logout", "Logout", "User")</i></li>
+
+                                            </ul>
+                                        </li>
+                                    }
                                 </ul>
                             </div>
                         </div>
