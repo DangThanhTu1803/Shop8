@@ -153,7 +153,7 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3291,14 +3291,18 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Shared\ProductCategory.cshtml" />
-    <Content Include="Views\Categories\Categories.cshtml" />
-    <Content Include="Views\Categories\Detail.cshtml" />
+    <Content Include="Views\Product\Categories.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_Categories.cshtml" />
     <Content Include="Views\Shared\MainMenuCategory.cshtml" />
     <Content Include="Views\Shared\_Layout_Detail.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Product\Category.cshtml" />
+=======
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+>>>>>>> ca582d88f05bb53857fd718e413dfd3079220404
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
