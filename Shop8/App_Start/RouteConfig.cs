@@ -32,6 +32,12 @@ namespace Shop8
                defaults: new { controller = "User", action = "Register", id = UrlParameter.Optional },
                namespaces: new[] { "Shop8.Controllers" }
            );
+            routes.MapRoute(
+               name: "Login",
+               url: "Dang-nhap",
+               defaults: new { controller = "User", action = "Login", id = UrlParameter.Optional },
+               namespaces: new[] { "Shop8.Controllers" }
+           );
 
             routes.MapRoute(
                 name: "About",
