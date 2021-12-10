@@ -54,7 +54,7 @@ namespace Shop8.Controllers
                     }
                 }
             }
-            return View(model);
+            return View();
 
         }
        
