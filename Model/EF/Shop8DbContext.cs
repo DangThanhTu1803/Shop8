@@ -8,10 +8,11 @@ namespace Model.EF
     public partial class Shop8DbContext : DbContext
     {
         public Shop8DbContext()
-            : base("name=Shop8DbContext")
+            : base("name=Model1")
         {
         }
 
+        public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Content> Contents { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
@@ -27,6 +28,18 @@ namespace Model.EF
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Category>()
+                .Property(e => e.MetaTitle)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Category>()
+                .Property(e => e.CreatedBy)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Category>()
+                .Property(e => e.ModifiedBy)
+                .IsUnicode(false);
+
             modelBuilder.Entity<Content>()
                 .Property(e => e.MetaTitle)
                 .IsUnicode(false);
