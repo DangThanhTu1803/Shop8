@@ -1,0 +1,76 @@
+﻿@model Shop8.Models.RegisterModel
+
+@{
+    ViewBag.Title = "Đăng ký";
+    Layout = "~/Views/Shared/_Layout_Detail.cshtml";
+}
+<div class="content">
+
+    <div class="container single_product_container">
+        <div class="row">
+            <div class="col">
+
+                <!-- Breadcrumbs -->
+
+                <div class="breadcrumbs d-flex flex-row align-items-center">
+                    <ul>
+                        <li><a href="index.html">Register</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+            @using (Html.BeginForm("Register","User",FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <h4>Đăng ký thành viên mới</h4>
+                    <hr />
+                    <div class="form-group">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @if (ViewBag.Success != null)
+                {
+                    <div class="alert alert-successs">@ViewBag.Success</div>
+                }
+                    </div>
+                     <div class="col-md-12 form-group p_star">
+                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "Tài khoản" })
+                                <p>@Html.ValidationMessageFor(model => model.UserName, null, new { @class = "text-danger" })</p>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @placeholder = "Mật khẩu", @type = "password" })
+                                <p>@Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-danger" })</p>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                @Html.TextBoxFor(model => model.ConfirmPassword, new { @class = "form-control", @placeholder = "Xác nhận mật khẩu", @type = "password" })
+                                <p>@Html.ValidationMessageFor(model => model.ConfirmPassword, null, new { @class = "text-danger" })</p>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "Họ tên" })
+                                <p>@Html.ValidationMessageFor(model => model.Name, null, new { @class = "text-danger" })</p>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "Số điện thoại" })
+                                <p>@Html.ValidationMessageFor(model => model.Phone, null, new { @class = "text-danger" })</p>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "Địa chỉ Email" })
+                                <p>@Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })</p>
+                            </div>
+                            <div class="col-md-12 form-group p_star">
+                                @Html.TextBoxFor(model => model.Adress, new { @class = "form-control", @placeholder = "Địa chỉ" })
+                                <p>@Html.ValidationMessageFor(model => model.Adress, null, new { @class = "text-danger" })</p>
+                            </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Dăng ký" class="btn btn-default" />
+                        </div>
+                    </div>
+                </div>
+            }
+    </div>
+    
