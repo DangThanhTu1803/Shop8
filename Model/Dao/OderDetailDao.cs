@@ -14,7 +14,7 @@ namespace Model.Dao
         {
             db = new Shop8DbContext();
         }
-        //Thêm mới
+        
         public bool Insert(OrderDetail detail)
         {
             try

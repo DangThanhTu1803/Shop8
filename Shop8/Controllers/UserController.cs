@@ -55,7 +55,7 @@ namespace Shop8.Controllers
                     }
                 }
             }
-            return View();
+            return Redirect("/Dang-nhap");
         }
         
         public ActionResult Login()
@@ -76,7 +76,7 @@ namespace Shop8.Controllers
                     userSession.UserName = user.Username;
                     userSession.UserID = user.ID;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
-                    return Redirect("/categories/categories");
+                    return Redirect("/product/categories");
                 }
                 else if (result == 0)
                 {
@@ -96,7 +96,7 @@ namespace Shop8.Controllers
         public ActionResult Logout()
         {
             Session[CommonConstants.USER_SESSION] = null;
-            return Redirect("/categories/categories");
+            return Redirect("/product/categories");
         }
     }
 }
