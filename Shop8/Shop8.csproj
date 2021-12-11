@@ -153,8 +153,12 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
+=======
+    <Compile Include="Controllers\ProductController.cs" />
+>>>>>>> cda083c8bdb85abfe8db74582c88042e6acd5f76
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -3293,15 +3297,22 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Shared\ProductCategory.cshtml" />
-    <Content Include="Views\Categories\Categories.cshtml" />
-    <Content Include="Views\Categories\Detail.cshtml" />
+    <Content Include="Views\Product\Categories.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_Categories.cshtml" />
     <Content Include="Views\Shared\MainMenuCategory.cshtml" />
     <Content Include="Views\Shared\_Layout_Detail.cshtml" />
+
+    <Content Include="Views\Product\Category.cshtml" />
+
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+<<<<<<< HEAD
     <Content Include="Views\Cart\Index.cshtml" />
+=======
+
+>>>>>>> cda083c8bdb85abfe8db74582c88042e6acd5f76
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3341,7 +3352,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>true</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59548</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
