@@ -45,6 +45,12 @@ namespace Shop8
                 defaults: new { controller = "About", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "Shop8.Controllers" }
             );
+            routes.MapRoute(
+                name: "Add Cart",
+                url: "them-gio-hang",
+                defaults: new { controller = "Cart", action = "AddItem", id = UrlParameter.Optional },
+                namespaces: new[] { "Shop8.Controllers" }
+            );
 
             routes.MapRoute(
                 name: "Default",
