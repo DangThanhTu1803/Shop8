@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Script.Serialization;
 using System.Web.Mvc;
 using Model.EF;
+using Common;
+using System.Configuration;
 
 namespace Shop8.Controllers
 {
@@ -123,6 +125,7 @@ namespace Shop8.Controllers
                 var id = new OrderDao().Insert(order);
                 var cart = (List<CartItem>)Session[CartSession];
                 var detailDao = new OrderDetailDao();
+                decimal total = 0;
                 foreach (var item in cart)
                 {
                     var orderdetail = new OrderDetail();
@@ -131,7 +134,17 @@ namespace Shop8.Controllers
                     orderdetail.Price = item.Product.Price;
                     orderdetail.Quantity = item.Quantity;
                     detailDao.Insert(orderdetail);
+
+                    total += (item.Product.Price * item.Quantity);
                 }
+                string content = System.IO.File.ReadAllText(Server.MapPath("~/Assets/client/template/neworder.html"));
+                content = content.Replace("{{CustomerName}}", shipName);
+                content = content.Replace("{{Phone}}", phone);
+                content = content.Replace("{{Address}}", address);
+                content = content.Replace("{{Total}}", total.ToString("N0"));
+                var toEmail = ConfigurationManager.AppSettings["ToEmailAddress"].ToString();
+                
+                new MailHelper().SentMail(toEmail,"Đơn hàng mới từ Shop8",content);
             }
             catch (Exception ex)
             {

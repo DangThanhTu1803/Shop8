@@ -3002,6 +3002,7 @@
     <Content Include="Assets\client\styles\responsive.css" />
     <Content Include="Assets\client\styles\single_responsive.css" />
     <Content Include="Assets\client\styles\single_styles.css" />
+    <Content Include="Assets\client\template\neworder.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -3327,6 +3328,10 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{71835FE3-8ADA-45CD-8A80-40AD119D7EB6}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{ad41ff43-a839-4303-96aa-f52d4b35c509}</Project>
       <Name>Model</Name>
