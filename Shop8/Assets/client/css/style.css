@@ -255,3 +255,77 @@ small{
     margin-top: 30px;
     text-align: center
 }
+
+/* line 765, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+.cart_area .product_count {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+    /* line 771, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+    .cart_area .product_count input {
+        width: 76px;
+        border: 1px solid #eeeeee;
+        border-radius: 3px;
+        padding-left: 10px;
+    }
+
+    /* line 778, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+    .cart_area .product_count .input-number-increment {
+        position: absolute;
+        right: 0;
+        top: -7px;
+        padding: 10px;
+        border-left: 1px solid #dddddd;
+        display: inline-block;
+    }
+
+        /* line 786, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+        .cart_area .product_count .input-number-increment:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 7px;
+            width: 100%;
+            height: 1px;
+            background-color: #dddddd;
+        }
+
+    /* line 798, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+    .cart_area .product_count .input-number-decrement {
+        position: absolute;
+        right: 0;
+        bottom: -9px;
+        padding: 10px;
+        border-left: 1px solid #dddddd;
+        display: inline-block;
+    }
+    .cart_area .product_count .input-number-decrement {
+        position: absolute;
+        right: 0;
+        bottom: -9px;
+        padding: 10px;
+        border-left: 1px solid #dddddd;
+        display: inline-block;
+    }
+    .cart_area .product_count .input-number-increment {
+        position: absolute;
+        right: 0;
+        top: -7px;
+        padding: 10px;
+        border-left: 1px solid #dddddd;
+        display: inline-block;
+    }
+
+        /* line 786, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_product.scss */
+        .cart_area .product_count .input-number-increment:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 7px;
+            width: 100%;
+            height: 1px;
+            background-color: #dddddd;
+        }

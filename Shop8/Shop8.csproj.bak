@@ -153,8 +153,12 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\AboutController.cs" />
+
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
+
     <Compile Include="Controllers\ProductController.cs" />
+
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2971,7 +2975,6 @@
     <Content Include="Assets\client\Images\user-3.png" />
     <Content Include="Assets\client\js\categories_custom.js" />
     <Content Include="Assets\client\js\contact_custom.js" />
-    <Content Include="Assets\client\js\Controller\cartController.js" />
     <Content Include="Assets\client\js\custom.js" />
     <Content Include="Assets\client\js\jquery-3.2.1.min.js" />
     <Content Include="Assets\client\js\single_custom.js" />
@@ -3002,7 +3005,6 @@
     <Content Include="Assets\client\styles\responsive.css" />
     <Content Include="Assets\client\styles\single_responsive.css" />
     <Content Include="Assets\client\styles\single_styles.css" />
-    <Content Include="Assets\client\template\neworder.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -3295,22 +3297,22 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\MainMenu.cshtml" />
     <Content Include="Views\Shared\ProductCategory.cshtml" />
-    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Categories.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
     <Content Include="Views\Shared\_Layout_Categories.cshtml" />
     <Content Include="Views\Shared\MainMenuCategory.cshtml" />
     <Content Include="Views\Shared\_Layout_Detail.cshtml" />
+
     <Content Include="Views\Product\Category.cshtml" />
+
     <Content Include="Views\User\Register.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
-
-
+<<<<<<< HEAD
     <Content Include="Views\Cart\Index.cshtml" />
-    <Content Include="Views\Shared\HeaderCart.cshtml" />
-    <Content Include="Views\Cart\Payment.cshtml" />
-    <Content Include="Views\Cart\Success.cshtml" />
+=======
 
+>>>>>>> cda083c8bdb85abfe8db74582c88042e6acd5f76
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -3331,10 +3333,6 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
-      <Project>{71835FE3-8ADA-45CD-8A80-40AD119D7EB6}</Project>
-      <Name>Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{ad41ff43-a839-4303-96aa-f52d4b35c509}</Project>
       <Name>Model</Name>
@@ -3354,7 +3352,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>true</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59548</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

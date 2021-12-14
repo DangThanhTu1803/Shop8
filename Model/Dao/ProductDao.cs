@@ -77,10 +77,7 @@ namespace Model.Dao
         public List<Product> ListByCategoryId(long categoryID, ref int totalRecord,int page = 1, int pageSize = 2)
         {
             totalRecord = db.Products.Where(x => x.CategoryID == categoryID).Count();
-            var model = db.Products.Where(x => x.CategoryID == categoryID)
-                                    .OrderByDescending(x=>x.CreatedDate)
-                                    .Skip((page - 1)* pageSize)
-                                    .Take(pageSize).ToList();
+            var model = db.Products.Where(x => x.CategoryID == categoryID).OrderByDescending(x=>x.CreatedDate).Skip((page - 1)* pageSize).Take(pageSize).ToList();
             return model;        
         }
 
