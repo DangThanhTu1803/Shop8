@@ -21,6 +21,12 @@ namespace Shop8
             );
 
             routes.MapRoute(
+                name: "Product",
+                url: "san-pham",
+                defaults: new { controller = "Product", action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "Shop8.Controllers" }
+            );
+            routes.MapRoute(
                 name: "Product Detail",
                 url: "chi-tiet/{metatitle}-{id}",
                 defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
