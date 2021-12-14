@@ -16,14 +16,14 @@ namespace Shop8.Controllers
         }
         public ActionResult Categories()
         {
-            var productDao = new ProductDao();
-            ViewBag.AllProducts = productDao.ListNewProduct(24);
+            //var productDao = new ProductDao();
+            //ViewBag.AllProducts = productDao.ListNewProduct(24);
             return View();
         }
         [ChildActionOnly]
         public PartialViewResult ProductCategory()
         {
-            var model = new ProductCategoryDao().ListAll() ;
+            var model = new ProductCategoryDao().ListAll();
             return PartialView(model);
         }
         [ChildActionOnly]
@@ -33,26 +33,27 @@ namespace Shop8.Controllers
             return PartialView(model);
         }
 
-        public ActionResult Category(long id,int pageIndex = 1,int pageSize = 2)
+        public ActionResult Category(long id, int page = 1, int pageSize = 12)
         {
             var category = new CategoryDao().ViewDetail(id);
             ViewBag.Category = category;
             int totalRecord = 0;
-            var model = new ProductDao().ListByCategoryId(id, ref totalRecord, pageIndex, pageSize);
-            ViewBag.Total = totalRecord;
-            ViewBag.Page = pageIndex;
+            var model = new ProductDao().ListByCategoryId(id, ref totalRecord, page, pageSize);
 
-            int maxPage = 5;
-            int totalPage = 0;
-            totalPage = (int)Math.Ceiling((double)(totalRecord / pageSize));
+            ViewBag.Total = totalRecord;
+            ViewBag.Page = page;
+
+            int maxPage = 1;
+            int totalPage;
+            totalPage = (int)Math.Ceiling((double)totalRecord / pageSize);
             ViewBag.TotalPage = totalPage;
-            ViewBag.maxPage = maxPage;
+            ViewBag.MaxPage = maxPage;
             ViewBag.First = 1;
             ViewBag.Last = totalPage;
-            ViewBag.Next = pageIndex + 1;
-            ViewBag.Prev = pageIndex - 1;
+            ViewBag.Next = page + 1;
+            ViewBag.Prev = page - 1;
 
-            return View(model) ;
+            return View(model);
         }
 
         public ActionResult Detail(long id)

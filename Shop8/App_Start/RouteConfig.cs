@@ -15,14 +15,14 @@ namespace Shop8
 
             routes.MapRoute(
                 name: "Product Category",
-                url: "san-pham/{metatirle}-{id}",
+                url: "san-pham/{metatitle}-{id}",
                 defaults: new { controller = "Product", action = "Category", id = UrlParameter.Optional },
                 namespaces: new[] { "Shop8.Controllers" }
             );
 
             routes.MapRoute(
                 name: "Product Detail",
-                url: "chi-tiet/{metatirle}-{id}",
+                url: "chi-tiet/{metatitle}-{id}",
                 defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional },
                 namespaces: new[] { "Shop8.Controllers" }
             );
