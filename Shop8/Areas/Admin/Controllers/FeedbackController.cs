@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Shop8.Areas.Admin.Controllers
 {
-    public class FeedbackController : Controller
+    public class FeedbackController : BaseController
     {
         // GET: Admin/Feedback
         public ActionResult Index(string searchString, int page = 1, int pageSize = 10)

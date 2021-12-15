@@ -15,7 +15,10 @@ namespace Model.Dao
         {
             db = new Shop8DbContext();
         }
-
+        public Contact GetActiveContact()
+        {
+            return db.Contacts.Single(x => x.Status == true);
+        }
         //Tìm theo id
         public Contact GetByID(long id)
         {
