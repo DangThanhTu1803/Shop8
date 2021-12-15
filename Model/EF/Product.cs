@@ -77,10 +77,12 @@ namespace Model.EF
 
         public DateTime? TopHot { get; set; }
 
+
         
         [StringLength(250)]
         public string Image2 { get; set; }
         
+
         [StringLength(250)]
         public string Image3 { get; set; }
 
