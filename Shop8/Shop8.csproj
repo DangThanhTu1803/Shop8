@@ -2927,6 +2927,8 @@
     <Content Include="Assets\client\Images\desc_2.jpg" />
     <Content Include="Assets\client\Images\desc_3.jpg" />
     <Content Include="Assets\client\Images\exclusive Product.png" />
+    <Content Include="Assets\client\Images\giiiii.gif" />
+    <Content Include="Assets\client\Images\giphy.gif" />
     <Content Include="Assets\client\Images\logo-coca-cola.png" />
     <Content Include="Assets\client\Images\logo-godrej.png" />
     <Content Include="Assets\client\Images\logo-one.png" />
@@ -2970,6 +2972,7 @@
     <Content Include="Assets\client\Images\user-1.png" />
     <Content Include="Assets\client\Images\user-2.png" />
     <Content Include="Assets\client\Images\user-3.png" />
+    <Content Include="Assets\client\Images\uu.png" />
     <Content Include="Assets\client\js\categories_custom.js" />
     <Content Include="Assets\client\js\contact_custom.js" />
     <Content Include="Assets\client\js\Controller\cartController.js" />

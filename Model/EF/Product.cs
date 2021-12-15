@@ -28,15 +28,6 @@ namespace Model.EF
         [StringLength(500)]
         public string Description { get; set; }
 
-        [StringLength(500)]
-        public string Description1 { get; set; }
-        
-        [StringLength(500)]
-        public string Description2 { get; set; }
-        
-        [StringLength(500)]
-        public string Description3 { get; set; }
-
         [Required]
         [StringLength(250)]
         public string Image { get; set; }
@@ -78,10 +69,16 @@ namespace Model.EF
         public DateTime? TopHot { get; set; }
 
 
+        [StringLength(500)]
+        public string Description1 { get; set; }
+        [StringLength(500)]
+        public string Description2 { get; set; }
+        [StringLength(500)]
+        public string Description3 { get; set; }
         
         [StringLength(250)]
         public string Image2 { get; set; }
-        
+            
 
         [StringLength(250)]
         public string Image3 { get; set; }

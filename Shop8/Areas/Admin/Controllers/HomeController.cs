@@ -11,7 +11,12 @@ namespace Shop8.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index()
         {
+            ViewBag.Thang = DateTime.Now.Month;
+            ViewBag.Nam = DateTime.Now.Year;
+            
+
             return View();
         }
+
     }
 }

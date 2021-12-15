@@ -19,6 +19,26 @@
         })
 
         var editor = CKEDITOR.replace('txtContent');
+        $('#btnImage2').on('click', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImage2').val(url);
+            };
+            finder.popup();
+        })
+
+        var editor = CKEDITOR.replace('txtContent');
+        $('#btnImage3').on('click', function (e) {
+            e.preventDefault();
+            var finder = new CKFinder();
+            finder.selectActionFunction = function (url) {
+                $('#txtImage3').val(url);
+            };
+            finder.popup();
+        })
+
+        var editor = CKEDITOR.replace('txtContent');
     </script>
 }
 <div class="card shadow mb-4">
@@ -74,9 +94,9 @@
                     <div class="col">
                         <label>Ảnh 2</label>
                         <div class="input-group">
-                            @Html.TextBoxFor(model => model.Image2, new { @class = "form-control", @id = "txtImage" })
+                            @Html.TextBoxFor(model => model.Image2, new { @class = "form-control", @id = "txtImage2" })
                             <div class="input-group-append">
-                                <a href="#" class="btn btn-primary" id="btnImage">Chọn ảnh</a>
+                                <a href="#" class="btn btn-primary" id="btnImage2">Chọn ảnh</a>
                             </div>
                         </div>
                         @Html.ValidationMessageFor(model => model.Image2)
@@ -84,9 +104,9 @@
                     <div class="col">
                         <label>Ảnh 3</label>
                         <div class="input-group">
-                            @Html.TextBoxFor(model => model.Image3, new { @class = "form-control", @id = "txtImage" })
+                            @Html.TextBoxFor(model => model.Image3, new { @class = "form-control", @id = "txtImage3" })
                             <div class="input-group-append">
-                                <a href="#" class="btn btn-primary" id="btnImage">Chọn ảnh</a>
+                                <a href="#" class="btn btn-primary" id="btnImage3">Chọn ảnh</a>
                             </div>
                         </div>
                         @Html.ValidationMessageFor(model => model.Image3)
