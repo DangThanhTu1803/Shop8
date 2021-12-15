@@ -6,7 +6,6 @@
 }
 
 <!-- Hamburger Menu -->
-
 <!--<div class="hamburger_menu">
     <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
     <div class="hamburger_menu_content text-right">
@@ -59,7 +58,7 @@
     <div class="row">
         <div class="col">
 
-            <!-- Breadcrumbs --> 
+            <!-- Breadcrumbs -->
 
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
@@ -121,13 +120,8 @@
                 </div>
                 <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                     @*  *@
-                    <h2>Số lượng</h2>
-                    <div class="product_count">
-
-                        <input id="qlq1" class="txtQuantity input-number" type="number" min="0" max="10" data-id="@Model.ID" value=1>
-
-                    </div>
-                    <div class="red_button add_to_cart_button"><a href="/them-gio-hang?productId=@Model.ID&quantity=qlq1">add to cart</a></div>
+                    
+                    <div id="btnaddtocart" class="red_button add_to_cart_button"><a href="/them-gio-hang?productId=@Model.ID&quantity=qlq1">add to cart</a></div>
                     <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
                 </div>
             </div>
@@ -159,8 +153,8 @@
                     <div class="row">
                         <div class="col-lg-5 desc_col">
                             @*<div class="tab_title">
-                                <h4>Description</h4>
-                            </div>*@
+                                    <h4>Description</h4>
+                                </div>*@
                             <div class="tab_text_block">
                                 <h2>Pocket cotton sweatshirt</h2>
                                 <p>Nam tempus turpis at metus scelerisque placerat nulla deumantos solicitud felis. Pellentesque diam dolor, elementum etos lobortis des mollis ut...</p>
