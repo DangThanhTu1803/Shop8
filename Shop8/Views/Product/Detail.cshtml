@@ -7,53 +7,7 @@
 
 <!-- Hamburger Menu -->
 
-<!--<div class="hamburger_menu">
-    <div class="hamburger_close"><i class="fa fa-times" aria-hidden="true"></i></div>
-    <div class="hamburger_menu_content text-right">
-        <ul class="menu_top_nav">
-            <li class="menu_item has-children">
-                <a href="#">
-                    usd
-                    <i class="fa fa-angle-down"></i>
-                </a>
-                <ul class="menu_selection">
-                    <li><a href="#">cad</a></li>
-                    <li><a href="#">aud</a></li>
-                    <li><a href="#">eur</a></li>
-                    <li><a href="#">gbp</a></li>
-                </ul>
-            </li>
-            <li class="menu_item has-children">
-                <a href="#">
-                    English
-                    <i class="fa fa-angle-down"></i>
-                </a>
-                <ul class="menu_selection">
-                    <li><a href="#">French</a></li>
-                    <li><a href="#">Italian</a></li>
-                    <li><a href="#">German</a></li>
-                    <li><a href="#">Spanish</a></li>
-                </ul>
-            </li>
-            <li class="menu_item has-children">
-                <a href="#">
-                    My Account
-                    <i class="fa fa-angle-down"></i>
-                </a>
-                <ul class="menu_selection">
-                    <li><a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                    <li><a href="#"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
-                </ul>
-            </li>
-            <li class="menu_item"><a href="#">home</a></li>
-            <li class="menu_item"><a href="#">shop</a></li>
-            <li class="menu_item"><a href="#">promotion</a></li>
-            <li class="menu_item"><a href="#">pages</a></li>
-            <li class="menu_item"><a href="#">blog</a></li>
-            <li class="menu_item"><a href="#">contact</a></li>
-        </ul>
-    </div>
-</div>-->
+
 
 <div class="container single_product_container">
     <div class="row">
@@ -120,7 +74,7 @@
                     </ul>
                 </div>
                 <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
-                    @*  *@
+                    
                     <h2>Số lượng</h2>
                     <div class="product_count">
 
@@ -142,7 +96,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col"> 
                 <div class="tabs_container">
                     <ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
                         <li class="tab active" data-active-tab="tab_1"><span>Description</span></li>
@@ -166,7 +120,7 @@
                                 <p>@Model.Detail</p>
                             </div>
                             <div class="tab_image">
-                                <img src="~/Assets/client/images/desc_1.jpg" alt="">
+                                <img src="@Model.Image" alt="">
                             </div>
                             <div class="tab_text_block">
                                 <h2>@Model.Name</h2>
@@ -175,14 +129,14 @@
                         </div>
                         <div class="col-lg-5 offset-lg-2 desc_col">
                             <div class="tab_image">
-                                <img src="~/Assets/client/images/desc_2.jpg" alt="">
+                                <img src="@Model.Image2" alt="">
                             </div>
                             <div class="tab_text_block">
                                 <h2>@Model.Name</h2>
                                 <p>@Model.Description2</p>
                             </div>
                             <div class="tab_image desc_last">
-                                <img src="~/Assets/client/images/desc_3.jpg" alt="">
+                                <img src="@Model.Image3" alt="">
                             </div>
                         </div>
                     </div>
@@ -190,6 +144,5 @@
             </div>
         </div>
     </div>
-
 </div>
 
