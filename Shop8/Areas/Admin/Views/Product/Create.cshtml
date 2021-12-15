@@ -49,6 +49,16 @@
                         @Html.TextBoxFor(model => model.MetaTitle, new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.MetaTitle)
                     </div>
+                    
+                    <div class="col">
+                        <label>Danh mục</label>
+                        @Html.DropDownListFor(model => model.CategoryID, null, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.CategoryID)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
                     <div class="col">
                         <label>Ảnh</label>
                         <div class="input-group">
@@ -60,9 +70,24 @@
                         @Html.ValidationMessageFor(model => model.Image)
                     </div>
                     <div class="col">
-                        <label>Danh mục</label>
-                        @Html.DropDownListFor(model => model.CategoryID, null, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.CategoryID)
+                        <label>Ảnh 2</label>
+                        <div class="input-group">
+                            @Html.TextBoxFor(model => model.Image2, new { @class = "form-control", @id = "txtImage" })
+                            <div class="input-group-append">
+                                <a href="#" class="btn btn-primary" id="btnImage">Chọn ảnh</a>
+                            </div>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Image2)
+                    </div>
+                    <div class="col">
+                        <label>Ảnh 3</label>
+                        <div class="input-group">
+                            @Html.TextBoxFor(model => model.Image3, new { @class = "form-control", @id = "txtImage" })
+                            <div class="input-group-append">
+                                <a href="#" class="btn btn-primary" id="btnImage">Chọn ảnh</a>
+                            </div>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Image3)
                     </div>
                 </div>
             </div>
