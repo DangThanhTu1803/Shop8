@@ -74,10 +74,10 @@ namespace Model.EF
         public string Description2 { get; set; }
         [StringLength(500)]
         public string Description3 { get; set; }
-        [Required]
+        
         [StringLength(250)]
         public string Image2 { get; set; }
-        [Required]
+            
         [StringLength(250)]
         public string Image3 { get; set; }
 
