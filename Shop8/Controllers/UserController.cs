@@ -76,7 +76,7 @@ namespace Shop8.Controllers
                     userSession.UserName = user.Username;
                     userSession.UserID = user.ID;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
-                    return Redirect("/product/categories");
+                    return Redirect("/san-pham");
                 }
                 else if (result == 0)
                 {
@@ -96,7 +96,7 @@ namespace Shop8.Controllers
         public ActionResult Logout()
         {
             Session[CommonConstants.USER_SESSION] = null;
-            return Redirect("/product/categories");
+            return Redirect("/san-pham");
         }
     }
 }

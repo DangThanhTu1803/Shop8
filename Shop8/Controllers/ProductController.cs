@@ -1,4 +1,5 @@
 ﻿using Model.Dao;
+using Shop8.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Shop8.Controllers
 {
     public class ProductController : Controller
     {
+        private const string CartSession = "CartSession";
         // GET: Categories
         public ActionResult Index()
         {
@@ -55,7 +57,43 @@ namespace Shop8.Controllers
 
             return View(model);
         }
-
+        public ActionResult AddItem(long productId, int quantity)
+        {
+            var product = new ProductDao().GetByID(productId);
+            var cart = Session[CartSession];
+            if (cart != null)
+            {
+                var list = (List<CartItem>)cart;
+                if (list.Exists(x => x.Product.ID == productId))
+                {
+                    foreach (var item in list)
+                    {
+                        if (item.Product.ID == productId)
+                        {
+                            item.Quantity += quantity;
+                        }
+                    }
+                }
+                else
+                {
+                    var item = new CartItem();
+                    item.Product = product;
+                    item.Quantity = quantity;
+                    list.Add(item);
+                }
+                Session[CartSession] = list;
+            }
+            else
+            {
+                var item = new CartItem();
+                item.Product = product;
+                item.Quantity = quantity;
+                var list = new List<CartItem>();
+                list.Add(item);
+                Session[CartSession] = list;
+            }
+            return RedirectToAction("Index");
+        }
         public ActionResult Detail(long id)
         {
             var product = new ProductDao().ViewDetail(id);

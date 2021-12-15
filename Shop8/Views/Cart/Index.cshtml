@@ -44,15 +44,16 @@
                     <tr>
                         <td>@item.Product.Name</td>
                         <td><img src="@item.Product.Image" width="100" /></td>
-                        @*<td class="quantity_selector">
-                            <div>
-                                <span class="minus"><i class="fa fa-minus" aria-hidden="true"></i></span>
-                                <input type="text" class="txtQuantity" data-id="@item.Product.ID" value="@item.Quantity></input>
-                                <span class="plus"><i class="fa fa-plus" aria-hidden="true"></i></span>
-
+                        <span>Quantity:</span>
+                        <td>
+                            <div class="quantity_selector">
+                                <span class="minus"><i class="fa fa-minus" aria-hidden="false"></i></span>
+                                <input type="text" class="txtQuantity" data-id="@item.Product.ID" value="@item.Quantity" />
+                                <span class="plus"><i class="fa fa-plus" aria-hidden="false"></i></span>
                             </div>
-                        </td>*@
-                        <td><input type="text" class="txtQuantity" data-id="@item.Product.ID" value="@item.Quantity" /></td>
+                        </td>
+
+                        @*<td><input type="text" class="txtQuantity" data-id="@item.Product.ID" value="@item.Quantity" /></td>*@
                         <td>@item.Product.Price</td>
                         <td>@(item.Product.Price * item.Quantity)</td>
                         <td><a href="#" class="btn-delete" data-id="@item.Product.ID">Xóa</a></td>
@@ -60,7 +61,7 @@
                     }
                 </tbody>
             </table>
-            <button id="btnContinue" class="btn">Tiếp tục mua hàng</button>
+            <button  class="btn"><a href="/san-pham">Tiếp tục mua hàng</button>
             <button id="btnUpdate" class="btn">Cập nhật giỏ hàng</button>
             <button id="btnDeleteAll" class="btn">Xóa tất cả giỏ hàng</button>
             <button id="btnPayment" class="btn">Thanh toán</button>
