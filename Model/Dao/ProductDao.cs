@@ -140,6 +140,8 @@ namespace Model.Dao
                 Entity.TopHot = NewEntity.TopHot;
                 Entity.Description1 = NewEntity.Description1;
                 Entity.Description2 = NewEntity.Description2;
+                Entity.Image2 = NewEntity.Image2;
+                Entity.Image3 = NewEntity.Image3;
                 db.SaveChanges(); 
 
                 return true;
