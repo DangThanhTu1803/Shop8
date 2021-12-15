@@ -46,10 +46,10 @@
                         <td><img src="@item.Product.Image" width="100" /></td>
                         <span>Quantity:</span>
                         <td>
-                            <div class="quantity_selector">
-                                <span class="minus"><i class="fa fa-minus" aria-hidden="false"></i></span>
-                                <input type="text" class="txtQuantity" data-id="@item.Product.ID" value="@item.Quantity" />
-                                <span class="plus"><i class="fa fa-plus" aria-hidden="false"></i></span>
+                            <div class="product_count">
+                                
+                                <input class="txtQuantity input-number" type="number" min="0" max="10" data-id="@item.Product.ID" value="@item.Quantity">
+                               
                             </div>
                         </td>
 

@@ -121,8 +121,13 @@
                 </div>
                 <div class="quantity d-flex flex-column flex-sm-row align-items-sm-center">
                     @*  *@
-                  
-                    <div class="red_button add_to_cart_button"><a href="/them-gio-hang?productId=@Model.ID&quantity=1">add to cart</a></div>
+                    <h2>Số lượng</h2>
+                    <div class="product_count">
+
+                        <input id="qlq1" class="txtQuantity input-number" type="number" min="0" max="10" data-id="@Model.ID" value=1>
+
+                    </div>
+                    <div class="red_button add_to_cart_button"><a href="/them-gio-hang?productId=@Model.ID&quantity=qlq1">add to cart</a></div>
                     <div class="product_favorite d-flex flex-column align-items-center justify-content-center"></div>
                 </div>
             </div>

@@ -68,6 +68,13 @@ namespace Model.EF
 
         public DateTime? TopHot { get; set; }
 
+        [StringLength(500)]
+        public string Description1 { get; set; }
+        [StringLength(500)]
+        public string Description2 { get; set; }
+        [StringLength(500)]
+        public string Description3 { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
 

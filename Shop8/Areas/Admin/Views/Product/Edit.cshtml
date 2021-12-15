@@ -95,8 +95,18 @@
             </div>
 
             <div class="form-group">
-                <label>Nội dung</label>
+                <label>Nội dung chi tiết 1</label>
                 @Html.TextAreaFor(model => model.Detail, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Detail)
+            </div>
+            <div class="form-group">
+                <label>Nội dung chi tiết 2</label>
+                @Html.TextAreaFor(model => model.Description1, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Detail)
+            </div>
+            <div class="form-group">
+                <label>Nội dung chi tiết 3</label>
+                @Html.TextAreaFor(model => model.Description2, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Detail)
             </div>
             <div class="form-group">
