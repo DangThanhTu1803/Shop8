@@ -35,7 +35,7 @@ namespace Shop8.Controllers
             return PartialView(model);
         }
 
-        public ActionResult Category(long id, int page = 1, int pageSize = 12)
+        public ActionResult Category(long id, int page = 1, int pageSize = 8)
         {
             var category = new CategoryDao().ViewDetail(id);
             ViewBag.Category = category;
