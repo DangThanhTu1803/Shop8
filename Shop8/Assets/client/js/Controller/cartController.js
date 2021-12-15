@@ -6,6 +6,7 @@
         $('#btnContinue').off('click').on('click', function () {
             window.location.href = "/san-pham";
         });
+        
         $('#btnPayment').off('click').on('click', function () {
             window.location.href = "/thanh-toan";
         });

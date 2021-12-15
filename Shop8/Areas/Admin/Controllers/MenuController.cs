@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Shop8.Areas.Admin.Controllers
 {
-    public class MenuController : Controller
+    public class MenuController : BaseController
     {
         // GET: Admin/Menu
         public ActionResult Index(string searchString, int page = 1, int pageSize = 5)

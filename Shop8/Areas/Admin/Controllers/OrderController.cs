@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace Shop8.Areas.Admin.Controllers
 {
-    public class OrderController : Controller
+    public class OrderController : BaseController
     {
         // GET: Admin/Oder
         public ActionResult Index(string searchString, int page = 1, int pageSize = 5)

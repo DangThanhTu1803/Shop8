@@ -390,7 +390,22 @@ jQuery(document).ready(function($)
 		    });
     	}
     }
+	$(document).ready(function () {
+		$('.input-number-increment').on('click', function () {
+			var QuantityClass = $(this).parent();
+			var input = QuantityClass.find(".txtQuantity.input-number:first");
+			var value = Number(input.val()) + 1;
+			input.val(value);
+		});
+		$('.input-number-decrement').on('click', function () {
+			var QuantityClass = $(this).parent();
+			var input = QuantityClass.find(".txtQuantity.input-number:first");
+			var value = Number(input.val());
 
+			if (value > 1)
+				input.val(value - 1);
+		});
+	});
     /* 
 
 	8. Init Slider

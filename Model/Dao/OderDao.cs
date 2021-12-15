@@ -50,7 +50,7 @@ namespace Model.Dao
                              OrderID = g.Key,
                              CustomerName = (from gg in g select gg.CustomerName).FirstOrDefault(),
                              Products = (from product in db.Products join gg in g on product.ID equals gg.ProductID select new ProductViewModel { ID = gg.ProductID, Name = product.Name, Quantity = gg.Quantity, Price = gg.Price }).ToList(),
-                             PriceTotal = g.Sum(x => x.Price),
+                             PriceTotal = g.Sum(x => x.Price * x.Quantity),
                              CreatedDate = (DateTime)(from gg in g select gg.CreatedDate).FirstOrDefault(),
                              Status = (from gg in g select gg.Status).FirstOrDefault(),
                          };
