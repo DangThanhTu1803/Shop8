@@ -38,6 +38,7 @@ namespace Shop8.Controllers
                     user.Username = model.UserName;
                     user.Password = Common.Encryptor.MD5Hash(model.Password);
                     user.Name = model.Name;
+                    user.GroupID = "MEMBER";
                     user.Phone = model.Phone;
                     user.Email = model.Email;
                     user.Address = model.Adress;
@@ -69,12 +70,14 @@ namespace Shop8.Controllers
             {
                 var dao = new UserDao();
                 var result = dao.Login(model.UserName, Encryptor.MD5Hash(model.Password));
-                if (result == 1)
+                if (result == 1) 
                 {
                     var user = dao.GetById(model.UserName);
                     var userSession = new UserLogin();
                     userSession.UserName = user.Username;
                     userSession.UserID = user.ID;
+                    userSession.Name = user.Name;
+                    userSession.GroupID = user.GroupID;
                     Session.Add(CommonConstants.USER_SESSION, userSession);
                     return Redirect("/san-pham");
                 }
