@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    var session = (Shop8.Common.UserLogin)Session[Shop8.Common.CommonConstants.USER_SESSION];
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Colo Shop Categories</title>
@@ -56,7 +60,7 @@
                                     {
                                         <li class="account">
                                             <a href="#">
-                                                My account
+                                                @session.UserName
                                                 <i class="fa fa-angle-down"></i>
                                             </a>
                                             <ul class="account_selection">

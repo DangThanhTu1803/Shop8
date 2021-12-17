@@ -104,12 +104,20 @@ namespace Shop8.Controllers
         [HttpGet]
         public ActionResult Payment()
         {
+            decimal total = 0;
             var cart = Session[CartSession];
             var list = new List<CartItem>();
             if (cart != null)
             {
                 list = (List<CartItem>)cart;
+                foreach (var item in list)
+                {
+                    var orderdetail = new OrderDetail();
+                    
+                    total += (item.Product.Price * item.Quantity);
+                }
             }
+            
             return View(list);
         }
         [HttpPost]

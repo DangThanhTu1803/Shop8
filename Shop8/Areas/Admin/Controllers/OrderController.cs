@@ -34,7 +34,12 @@ namespace Shop8.Areas.Admin.Controllers
 
             return View(dao);
         }
+        public ActionResult ChangeStatus(long id)
+        {
+            var result = new OrderDao().ChangeStatus(id);
+            
+            return Redirect("/Admin/Order/Index");
+        }
 
-        
     }
 }

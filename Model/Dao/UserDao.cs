@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common;
 using Model.EF;
 using PagedList;
 
@@ -34,8 +35,11 @@ namespace Model.Dao
                 }
                 user.Address = entity.Address;
                 user.Email = entity.Email;
+                user.Phone = entity.Phone;
+                user.GroupID = entity.GroupID;
                 user.ModifiedBy = entity.ModifiedBy;
                 user.ModifiedDate = DateTime.Now;
+                user.Status = entity.Status;
                 db.SaveChanges();
                 return true;
             }
@@ -63,25 +67,57 @@ namespace Model.Dao
         {
             return db.Users.Find(id);
         }
-        public int Login(String userName, string passWord)
+        public int Login(string username, string password, bool isLoginAdmin = false)
         {
-            var result = db.Users.SingleOrDefault(x => x.Username == userName);
+            var result = db.Users.SingleOrDefault(x => x.Username == username);
             if (result == null)
             {
-                return 0;
+                return 0; 
             }
             else
             {
-                if (result.Status == false)
+                if (isLoginAdmin == true)
                 {
-                    return -1;
+                    if (result.GroupID == CommonConstants.ADMIN_GROUP )
+                    {
+                        if (!result.Status)
+                        {
+                            return -1; 
+                        }
+                        else
+                        {
+                            if (result.Password == password)
+                            {
+                                return 1; 
+                            }
+                            else
+                            {
+                                return -2; 
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return -3; 
+                    }
                 }
                 else
                 {
-                    if (result.Password == passWord)
-                        return 1;
+                    if (!result.Status)
+                    {
+                        return -1; 
+                    }
                     else
-                        return -2;
+                    {
+                        if (result.Password == password)
+                        {
+                            return 1; 
+                        }
+                        else
+                        {
+                            return -2;
+                        }
+                    }
                 }
             }
         }
