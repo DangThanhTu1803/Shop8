@@ -20,6 +20,12 @@ namespace Model.Dao
         {
             return db.Feedbacks.Where(x => x.CreatedDate.Value.Month == month && x.CreatedDate.Value.Year == DateTime.Now.Year).Count();
         }
+
+        public List<Feedback> ListComment(int top)
+        {
+            return db.Feedbacks.OrderByDescending(x => x.CreatedDate).Where(x => x.Status == false).Take(top).ToList();
+        }
+
         //Cập nhật
         public IEnumerable<Feedback> ListAllPaging(string searchString, int page, int pageSize)
         {

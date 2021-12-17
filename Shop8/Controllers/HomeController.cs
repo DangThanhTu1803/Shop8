@@ -15,6 +15,9 @@ namespace Shop8.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            var feedbackDao = new FeedbackDao();
+            ViewBag.Comments = feedbackDao.ListComment(3);
+
             var productDao = new ProductDao();
             ViewBag.NewProducts = productDao.ListNewProduct(8);
             ViewBag.FeatureProducts = productDao.ListFeatureProduct(4);

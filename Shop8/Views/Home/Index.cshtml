@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     var listNewProducts = (List<Model.EF.Product>)ViewBag.NewProducts;
     var listFeatureProducts = (List<Model.EF.Product>)ViewBag.FeatureProducts;
+    var listComments = (List<Model.EF.Feedback>)ViewBag.Comments;
 }
 
 <div class="small-container">
@@ -39,7 +40,7 @@
                 </div>
             </div>
         }
-        
+
     </div>
 </div>
 <div class="small-container">
@@ -50,7 +51,7 @@
             var url = "/chi-tiet/" + item.MetaTitle + "-" + item.ID;
             <div class="col-4">
                 <a href="@url"><img src="@item.Image" alt="@item.Name"></a>
-                
+
                 <h4>@item.Name</h4>
                 <h5>@item.Price</h5>
                 <div class="rating">
@@ -61,7 +62,7 @@
                 </div>
             </div>
         }
-        
+
     </div>
 </div>
 <div class="offer">
@@ -94,23 +95,27 @@
 <div class="testimonial">
     <div class="small-container">
         <div class="row">
-            <div class="col-3">
-                <i class="fa fa-quote-left"></i>
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipsicing elit. Corrupti consequuntur eveniet
-                    beatae aperiam atque? Voluptate quae nihil numquam expedita nisi.
-                </p>
-                <div class="rating">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star-half-o"></i>
+
+            @foreach (var item in listComments)
+            {<div class="col-3">
+                    <i class="fa fa-quote-left"></i>
+                    <p>
+                        @item.Content
+                    </p>
+                    <div class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                    </div>
+                    <img src="~/Assets/client/Images/user-1.png">
+                    <h3>@item.Name</h3>
                 </div>
-                <img src="~/Assets/client/Images/user-1.png">
-                <h3>Lucy Bemana</h3>
-            </div>
-            <div class="col-3">
+            }
+
+
+            @*<div class="col-3">
                 <i class="fa fa-quote-left"></i>
                 <p>
                     Lorem ipsum dolor sit, amet consectetur adipsicing elit. Corrupti consequuntur eveniet
@@ -141,7 +146,7 @@
                 </div>
                 <img src="~/Assets/client/Images/user-3.png">
                 <h3>Betty Jane</h3>
-            </div>
+            </div>*@
         </div>
     </div>
 </div>
