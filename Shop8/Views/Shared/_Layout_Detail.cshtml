@@ -1,10 +1,12 @@
-
 ﻿@*@model Model.EF.Product*@
 @{
     ViewBag.Title = "Detail";
     Layout = null;
 }
 
+@{
+    var session = (Shop8.Common.UserLogin)Session[Shop8.Common.CommonConstants.USER_SESSION];
+}
 <!DOCTYPE html>
 
 <html lang="en">
@@ -48,7 +50,7 @@
                                     {
                                         <li class="account">
                                             <a href="#">
-                                                Bạn chưa đăng nhập
+                                                You are not Login
                                                 <i class="fa fa-angle-down"></i>
                                             </a>
                                             <ul class="account_selection">
@@ -61,7 +63,7 @@
                                     {
                                         <li class="account">
                                             <a href="#">
-                                                My account
+                                                @session.UserName
                                                 <i class="fa fa-angle-down"></i>
                                             </a>
                                             <ul class="account_selection">

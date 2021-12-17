@@ -1,5 +1,6 @@
 ﻿@model List<Shop8.Models.CartItem>
 
+
 @{
     ViewBag.Title = "Xác nhận đơn hàng";
     Layout = "~/Views/Shared/_Layout_Detail.cshtml";
@@ -35,28 +36,30 @@
                         <td>Số lượng</td>
                         <td>Đơn giá</td>
                         <td>Thành tiền</td>
-                        
+
                     </tr>
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
                     {
+
                         <tr>
                             <td>@item.Product.ID</td>
                             <td>@item.Product.Name</td>
                             <td><img src="@item.Product.Image" width="100" /></td>
                             <td><input class="txtQuantity input-number" type="number" min="0" max="10" data-id="@item.Product.ID" value="@item.Quantity"></td>
-                            <td>@item.Product.Price</td>
-                            <td>@(item.Product.Price * item.Quantity)</td>
-                            
+                            <td>@item.Product.Price đ</td>
+                            <td>@(item.Product.Price * item.Quantity) đ</td>
                         </tr>
+
                     }
 
                 </tbody>
             </table>
+
         }
 
-
+    <h5>@ViewBag.total đ </h5>
     </div>
     <div class="container single_product_container">
         <h3>Thông tin nhận hàng</h3>
